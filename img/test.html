@@ -1,3 +1,125 @@
 
 
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAMAAAAocOYLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUJDN0Y4RTQzODk3MTFFNUJGMjFCQzIwOTk3OTMzQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUJDN0Y4RTUzODk3MTFFNUJGMjFCQzIwOTk3OTMzQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QkM3RjhFMjM4OTcxMUU1QkYyMUJDMjA5OTc5MzNBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QkM3RjhFMzM4OTcxMUU1QkYyMUJDMjA5OTc5MzNBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pts1QfoAAABvUExURa+qLrGnFWmGJ7G0RuLVWcawIOrr7hZGhYzNAE5nboOXK5GSGC1SfYuMUhNgM26YRUdzJ5q0BpikNNbCOKWdF7W2uJLCA4mrV05slLjBWsW4QKyoVpeWXgg9iqLDDJ6OLTp+QQ9Agp+dVXB9Y3WFlH39sEkAAAIRSURBVHjabJPbmqsgDIVDKLUGRQ6pVqyth3n/Z5zgnpl25tu5UflxJYQVuPyKPoT+1wK8sYdSyhil3rf88F6xRQnyaJkff3gfGK1PkGlcpkFHy/0775W1NpHWOuquG0/dAhxe/MA5p6Tbtt2S4JMmFb55r1BBTKltmvrj1jR7FiFNh0LhynrMaWrWuX5ez81aVfccM1jVH/xh0eR0r2R9Xc/nmzznPUcgqw6uLES9FVzNt/P5Y66ODaCKAFx6xqhzUa1WwddreV2riQ1REB4s5LQXfP2ORgRq+V8SwIVLdllZ901iuk/b1BatbEsCkMORZJc/NkTvPDpvuPCWrDUBgnI+7oXf8WR8Mos2T/ms6uiXGODBDr+4J1xAZ/bP5uDu4Aqn8Ys755aTcW47ODBDgN74biwFza1HdENS4LejXEKU/HL8YdTNF18SYsLC58lyZ3qQ9ukh1aVlCNSBQ7OU4zTZGsPCAw8nrUWwZrcQoXNDW6qJDKCO/mM35l26zl44kBtruUnNrGPp7yWoYRhTPa+18Y5IqhWcrdzacT/FHuMoVzDPtUK3jPfqwATFQcUfDxXFeHGq5+bJep+bu2ADP/6REqPwmKe9bvd9yuJlqY1f/hV3U4SIBACE1thFcP/m/6DEJWSYZTYsMuA/977mRwZEAhdLliiqb/w2f71oSFZpGofwv/mULTK+fwb4U4ABAJVBMWXeqQbEAAAAAElFTkSuQmCC" >
+var canvas = document.querySelector("canvas"),
+    width = canvas.width,
+    height = canvas.height,
+    context = canvas.getContext("2d"),
+    voro = voronoi.voronoi().extent([[1, 1], [width - 1, height - 1]]);
+
+var n = 200,
+    particles = new Array(n),
+    fill = color.interpolateCubehelix(color.cubehelix(80, 1.50, 0.8), color.cubehelix(-100, 0.75, 0.35)),
+    radius = 10;
+
+for (var i = 0; i < n; ++i) particles[i] = {0: Math.random() * width, 1: Math.random() * height, vx: 0, vy: 0};
+for (var i = 0; i <= width; i += 80) particles.push([i, 0], [i, height]);
+for (var i = 0; i <= height; i += 80) particles.push([0, i], [width, i]);
+
+timer.timer(function(elapsed) {
+  for (var i = 0; i < n; ++i) {
+    var p = particles[i];
+    p[0] += p.vx; if (p[0] < 0) p[0] += width; else if (p[0] > width) p[0] -= width;
+    p[1] += p.vy; if (p[1] < 0) p[1] += height; else if (p[1] > height) p[1] -= height;
+    p.vx += 0.1 * (Math.random() - .5) - 0.01 * p.vx;
+    p.vy += 0.1 * (Math.random() - .5) - 0.01 * p.vy;
+  }
+
+  context.clearRect(0, 0, width, height);
+
+  var triangles = voro.triangles(particles),
+      links = voro.links(particles);
+
+  triangles.forEach(function(t) {
+    context.beginPath();
+    var r = drawRoundedTriangle(t[0][0], t[0][1], t[1][0], t[1][1], t[2][0], t[2][1], radius);
+    context.fillStyle = fill(Math.sqrt(r / 50));
+    context.fill();
+  });
+
+  context.beginPath();
+  triangles.forEach(function(t) {
+    drawRoundedTriangle(t[0][0], t[0][1], t[1][0], t[1][1], t[2][0], t[2][1], radius);
+  });
+  context.lineWidth = 5;
+  context.strokeStyle = "#ddd";
+  context.stroke();
+
+  context.beginPath();
+  links.forEach(function(l) {
+    drawLink(l.source[0], l.source[1], l.target[0], l.target[1]);
+  });
+  context.lineWidth = 1;
+  context.strokeStyle = "#aaa";
+  context.stroke();
+
+  context.beginPath();
+  particles.forEach(function(p) { drawParticle(p[0], p[1]); });
+  context.fillStyle = "#000";
+  context.fill();
+});
+
+function drawParticle(x, y) {
+  context.moveTo(x + 2, y);
+  context.arc(x, y, 2, 0, 2 * Math.PI);
+}
+
+function drawTriangle(x0, y0, x1, y1, x2, y2) {
+  context.moveTo(x0, y0);
+  context.lineTo(x1, y1);
+  context.lineTo(x2, y2);
+  context.closePath();
+}
+
+function drawLink(x0, y0, x1, y1) {
+  context.moveTo(x0, y0);
+  context.lineTo(x1, y1);
+}
+
+function drawRoundedTriangle(x0, y0, x1, y1, x2, y2, r) {
+  var circle = inscribeTriangle(x0, y0, x1, y1, x2, y2);
+  if (circle.radius <= r) {
+    context.moveTo(circle[0] + circle.radius, circle[1]);
+    context.arc(circle[0], circle[1], circle.radius, 0, 2 * Math.PI);
+  } else {
+    var p0 = closestPoint(circle[0], circle[1], x0, y0, x1, y1),
+        p1 = closestPoint(circle[0], circle[1], x1, y1, x2, y2),
+        p2 = closestPoint(circle[0], circle[1], x2, y2, x0, y0);
+    context.moveTo(p0[0], p0[1]);
+    context.arcTo(x1, y1, p1[0], p1[1], r);
+    context.arcTo(x2, y2, p2[0], p2[1], r);
+    context.arcTo(x0, y0, p0[0], p0[1], r);
+    context.closePath();
+  }
+  return circle.radius;
+}
+
+function closestPoint(x2, y2, x0, y0, x1, y1) {
+  var x10 = x1 - x0, y10 = y1 - y0,
+      x20 = x2 - x0, y20 = y2 - y0,
+      t = (x20 * x10 + y20 * y10) / (x10 * x10 + y10 * y10);
+  return [x0 + t * x10, y0 + t * y10];
+}
+
+function inscribeTriangle(x0, y0, x1, y1, x2, y2) {
+  var x01 = x0 - x1, y01 = y0 - y1,
+      x02 = x0 - x2, y02 = y0 - y2,
+      x12 = x1 - x2, y12 = y1 - y2,
+      l01 = Math.sqrt(x01 * x01 + y01 * y01),
+      l02 = Math.sqrt(x02 * x02 + y02 * y02),
+      l12 = Math.sqrt(x12 * x12 + y12 * y12),
+      k0 = l01 / (l01 + l02),
+      k1 = l12 / (l12 + l01),
+      center = segmentIntersection(x0, y0, x1 - k0 * x12, y1 - k0 * y12, x1, y1, x2 + k1 * x02, y2 + k1 * y02);
+  center.radius = Math.sqrt((l02 + l12 - l01) * (l12 + l01 - l02) * (l01 + l02 - l12) / (l01 + l02 + l12)) / 2;
+  return center;
+}
+
+function segmentIntersection(x0, y0, x1, y1, x2, y2, x3, y3) {
+  var x02 = x0 - x2, y02 = y0 - y2,
+      x10 = x1 - x0, y10 = y1 - y0,
+      x32 = x3 - x2, y32 = y3 - y2,
+      t = (x32 * y02 - y32 * x02) / (y32 * x10 - x32 * y10);
+  return [x0 + t * x10, y0 + t * y10];
+}
+
+</script>
