@@ -106,10 +106,18 @@
   height: 600px;
 }
   
+svg {
+  z-index: -1;
+  position: absolute;
+  top: 128px;
+  left: 0px;
+}
 </style>
 
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+      <button onclick="clk()">click</button>
+
   <div id="CT">
     <div id="H1">
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAMAAAAocOYLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUJDN0Y4RTQzODk3MTFFNUJGMjFCQzIwOTk3OTMzQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUJDN0Y4RTUzODk3MTFFNUJGMjFCQzIwOTk3OTMzQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QkM3RjhFMjM4OTcxMUU1QkYyMUJDMjA5OTc5MzNBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QkM3RjhFMzM4OTcxMUU1QkYyMUJDMjA5OTc5MzNBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pts1QfoAAABvUExURa+qLrGnFWmGJ7G0RuLVWcawIOrr7hZGhYzNAE5nboOXK5GSGC1SfYuMUhNgM26YRUdzJ5q0BpikNNbCOKWdF7W2uJLCA4mrV05slLjBWsW4QKyoVpeWXgg9iqLDDJ6OLTp+QQ9Agp+dVXB9Y3WFlH39sEkAAAIRSURBVHjabJPbmqsgDIVDKLUGRQ6pVqyth3n/Z5zgnpl25tu5UflxJYQVuPyKPoT+1wK8sYdSyhil3rf88F6xRQnyaJkff3gfGK1PkGlcpkFHy/0775W1NpHWOuquG0/dAhxe/MA5p6Tbtt2S4JMmFb55r1BBTKltmvrj1jR7FiFNh0LhynrMaWrWuX5ez81aVfccM1jVH/xh0eR0r2R9Xc/nmzznPUcgqw6uLES9FVzNt/P5Y66ODaCKAFx6xqhzUa1WwddreV2riQ1REB4s5LQXfP2ORgRq+V8SwIVLdllZ901iuk/b1BatbEsCkMORZJc/NkTvPDpvuPCWrDUBgnI+7oXf8WR8Mos2T/ms6uiXGODBDr+4J1xAZ/bP5uDu4Aqn8Ys755aTcW47ODBDgN74biwFza1HdENS4LejXEKU/HL8YdTNF18SYsLC58lyZ3qQ9ukh1aVlCNSBQ7OU4zTZGsPCAw8nrUWwZrcQoXNDW6qJDKCO/mM35l26zl44kBtruUnNrGPp7yWoYRhTPa+18Y5IqhWcrdzacT/FHuMoVzDPtUK3jPfqwATFQcUfDxXFeHGq5+bJep+bu2ADP/6REqPwmKe9bvd9yuJlqY1f/hV3U4SIBACE1thFcP/m/6DEJWSYZTYsMuA/977mRwZEAhdLliiqb/w2f71oSFZpGofwv/mULTK+fwb4U4ABAJVBMWXeqQbEAAAAAElFTkSuQmCC" >      <h1>ENERGY.GOV</h1>
@@ -137,5 +145,158 @@
       <h2>1000 Independence Ave. SW<br>Washington DC 20585<br>202-586-5000</h2>      
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script>
+var width = parseInt(d3.select("#middle").style("width"));
+var height = parseInt(d3.select("#middle").style("height"));
+
+var sampler = poissonDiscSampler(width, height, 30),
+    samples = [],
+    sample;
+
+while (sample = sampler()) samples.push(sample);
+
+var voronoi = d3.geom.voronoi()
+    .clipExtent([[-1, -1], [width + 1, height + 1]]);
+
+var svg = d3.select("#middle").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.selectAll("path")
+    .data(voronoi(samples))
+  .enter().append("path")
+    .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    .style("fill", "#fff")
+    .style("stroke", "#fff");
+
+function changer(d,o) {
+  // console.log(d.point)
+  var colorado;
+  if (o%4 == 0) {        
+        colorado = color(d.point);
+  } else if (o%4 == 1) {
+    colorado = "#fff";
+  } else if (o%4 == 2) {
+    var q = []
+    q[0] = 1000-d.point[0]
+    q[1] = 1000-d.point[1]
+    colorado = color(q)
+  } else if (o==100){
+    colorado = "hsl(" + (Math.random() * 360) + ",100%,50%)"; 
+  } else {
+    colorado = color(d.point);
+  };  
+  return colorado   
+}
+
+
+var o = 0;
+clk();
+function clk() {
+  
+  o+=1;
+  svg.selectAll("path")
+    .transition()
+    .duration(3000)
+    .delay(function(d,i){
+      return i;
+    })
+    .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    .style("fill", function(d) { 
+      var colorado = changer(d,o);
+      return colorado
+    })
+    .style("stroke", function(d) { 
+      var colorado = changer(d,o);
+
+      return colorado
+    })
+    .each("end",function(d,i){
+      if ((i)==580) {
+        console.log("d")
+        clk()}
+    });
+    
+}
+
+function color(d) {
+  var dx = d[0] - width / 2,
+      dy = d[1] - height / 2;
+  return d3.lab(100 - (dx * dx + dy * dy) / 5000, dx / 10, dy / 10);
+}
+
+// Based on https://www.jasondavies.com/poisson-disc/
+function poissonDiscSampler(width, height, radius) {
+  var k = 30, // maximum number of samples before rejection
+      radius2 = radius * radius,
+      R = 3 * radius2,
+      cellSize = radius * Math.SQRT1_2,
+      gridWidth = Math.ceil(width / cellSize),
+      gridHeight = Math.ceil(height / cellSize),
+      grid = new Array(gridWidth * gridHeight),
+      queue = [],
+      queueSize = 0,
+      sampleSize = 0;
+
+  return function() {
+    if (!sampleSize) return sample(Math.random() * width, Math.random() * height);
+
+    // Pick a random existing sample and remove it from the queue.
+    while (queueSize) {
+      var i = Math.random() * queueSize | 0,
+          s = queue[i];
+
+      // Make a new candidate between [radius, 2 * radius] from the existing sample.
+      for (var j = 0; j < k; ++j) {
+        var a = 2 * Math.PI * Math.random(),
+            r = Math.sqrt(Math.random() * R + radius2),
+            x = s[0] + r * Math.cos(a),
+            y = s[1] + r * Math.sin(a);
+
+        // Reject candidates that are outside the allowed extent,
+        // or closer than 2 * radius to any existing sample.
+        if (0 <= x && x < width && 0 <= y && y < height && far(x, y)) return sample(x, y);
+      }
+
+      queue[i] = queue[--queueSize];
+      queue.length = queueSize;
+    }
+  };
+
+  function far(x, y) {
+    var i = x / cellSize | 0,
+        j = y / cellSize | 0,
+        i0 = Math.max(i - 2, 0),
+        j0 = Math.max(j - 2, 0),
+        i1 = Math.min(i + 3, gridWidth),
+        j1 = Math.min(j + 3, gridHeight);
+
+    for (j = j0; j < j1; ++j) {
+      var o = j * gridWidth;
+      for (i = i0; i < i1; ++i) {
+        if (s = grid[o + i]) {
+          var s,
+              dx = s[0] - x,
+              dy = s[1] - y;
+          if (dx * dx + dy * dy < radius2) return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  function sample(x, y) {
+    var s = [x, y];
+    queue.push(s);
+    grid[gridWidth * (y / cellSize | 0) + (x / cellSize | 0)] = s;
+    ++sampleSize;
+    ++queueSize;
+    return s;
+  }
+}
+
+</script>
 </body>
 </html>
